@@ -5,38 +5,18 @@
 
 #### 基本使用方法
 （1）复制文件夹：
-- aParse/
-  -aParse.js(必须存在)
-  -html2json.js(必须存在)
-  -htmlparser.js(必须存在)
-  -showdown.js(必须存在)
-  -aDiscode.js(必须存在)
-  -aParse.wxml(必须存在)
-  -aParse.wxss(必须存在)
-  -emojis(可选)
-    
-(2)引入必要文件:
-//在使用的View中引入AParse模块
-var AParse = require('../../aParse/aParse.js');
 
-//在使用的acss中引入AParse.css,可以在app.acss
-@import "/aParse/aParse.acss";
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1116/235916_48437987_1670794.png "aaa.png")
+
+(2)引入必要文件:
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/000013_6afd889b_1670794.png "屏幕截图.png")
 
 (3)数据绑定
-var article = '<div>我是HTML代码</div>';
-/**
-* AParse.wxParse(bindName , type, data, target,imagePadding)
-* 1.bindName绑定的数据名(必填)
-* 2.type可以为html或者md(必填)
-* 3.data为传入的具体数据(必填)
-* 4.target为Page对象,一般为this(必填)
-* 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
-*/
-var that = this;
-AParse.aParse('article', 'html', article, that, 5);
+
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/000053_64ebbfce_1670794.png "屏幕截图.png")
 
 （4）模板引用：
-// 引入模板
-<import src="你的路径/aParse/aParse.wxml"/>
-//这里data中article为bindName
-<template is="aParse" data="{{aParseData:article.nodes}}"/>
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/000123_65bbe3ea_1670794.png "屏幕截图.png")

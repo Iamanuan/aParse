@@ -3,35 +3,40 @@
 #### 项目介绍
 钉钉小程序富文本解析解决方案
 
-#### 软件架构
-软件架构说明
+#### 基本使用方法
+（1）复制文件夹：
+- aParse/
+  -aParse.js(必须存在)
+  -html2json.js(必须存在)
+  -htmlparser.js(必须存在)
+  -showdown.js(必须存在)
+  -aDiscode.js(必须存在)
+  -aParse.wxml(必须存在)
+  -aParse.wxss(必须存在)
+  -emojis(可选)
+    
+(2)引入必要文件:
+//在使用的View中引入AParse模块
+var AParse = require('../../aParse/aParse.js');
 
+//在使用的acss中引入AParse.css,可以在app.acss
+@import "/aParse/aParse.acss";
 
-#### 安装教程
+(3)数据绑定
+var article = '<div>我是HTML代码</div>';
+/**
+* AParse.wxParse(bindName , type, data, target,imagePadding)
+* 1.bindName绑定的数据名(必填)
+* 2.type可以为html或者md(必填)
+* 3.data为传入的具体数据(必填)
+* 4.target为Page对象,一般为this(必填)
+* 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
+*/
+var that = this;
+AParse.aParse('article', 'html', article, that, 5);
 
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+（4）模板引用：
+// 引入模板
+<import src="你的路径/aParse/aParse.wxml"/>
+//这里data中article为bindName
+<template is="aParse" data="{{aParseData:article.nodes}}"/>

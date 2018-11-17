@@ -6,7 +6,7 @@
 #### 基本使用方法
 （1）复制文件夹：
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1116/235916_48437987_1670794.png "aaa.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/134524_95e82fc2_1670794.png "屏幕截图.png")
 
 (2)引入必要文件:
 

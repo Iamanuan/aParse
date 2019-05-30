@@ -2,16 +2,25 @@ var AParse = require('../../component/aParse/aParse.js');
 
 Page({
   onLoad(query) {
-    var article = '<p><span style="color:rgb(153,153,152);font-family:微软雅黑;font-size:medium;background-color:rgb(244,244,244);"><div>1.绘制命令和修改</div><div>1.绘制命令和修改</div><div>1.绘制命令和修改</div></span></p>';
+
+  let article = `
+      <h3>
+      <span style="color:red">钉钉小程序</span>
+      <span style="color:green">富文本解析</span>
+      <span style="color:blue">解决方案</span>
+      </h3>
+  `
     /**
-    * WxParse.wxParse(bindName , type, data, target,imagePadding)
+     * 使用说明：
+    * AParse.AParse(bindName , type, data, target,imagePadding)
     * 1.bindName绑定的数据名(必填)
     * 2.type可以为html或者md(必填)
     * 3.data为传入的具体数据(必填)
     * 4.target为Page对象,一般为this(必填)
     * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
     */
-    var that = this;
+
+    let that = this;
     AParse.aParse('article', 'html', article, that, 5);
   }
 });

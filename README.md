@@ -3,6 +3,12 @@
 #### 项目介绍
 钉钉小程序富文本解析解决方案，能在应用中解析html，markdown代码。使用方式如下，基本使用样例见aParse/index。
 
+#### 实现样例：
+
+![Sample_1](https://images.gitee.com/uploads/images/2019/0530/182507_ce094ee9_1670794.jpeg "sample_1.jpg")
+
+![Sample_2](https://images.gitee.com/uploads/images/2019/0530/182534_8e62ae11_1670794.png "sample_2.png")
+
 #### 基本使用方法
 （1）复制文件夹：
 
@@ -58,4 +64,5 @@
     <import src="../../component/aParse/aParse.axml"/>
     
     <template is="aParse" data="{{aParseData:article.nodes}}"/>
+
 

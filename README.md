@@ -5,9 +5,14 @@
 
 #### 实现样例：
 
-![Sample_1](https://images.gitee.com/uploads/images/2019/0530/182507_ce094ee9_1670794.jpeg "sample_1.jpg"){:width="250px" height="1000px"}
-
-![Sample_2](https://images.gitee.com/uploads/images/2019/0530/182534_8e62ae11_1670794.png "sample_2.png"){:width="250px" height="600px"}
+<div style="display:flex">
+    <div display='flex:1'>
+        <img src='https://images.gitee.com/uploads/images/2019/0530/182507_ce094ee9_1670794.jpeg' style="width:250px">
+    </div>
+    <div dispaly="flex:1">
+        <img src='https://images.gitee.com/uploads/images/2019/0530/182534_8e62ae11_1670794.png' style="width:250px">
+    </div>
+</div>
 
 #### 基本使用方法
 （1）复制文件夹：

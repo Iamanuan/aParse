@@ -1,30 +1,61 @@
-# ddParse
+﻿# ddParse
 
 #### 项目介绍
-钉钉小程序富文本解析解决方案
+钉钉小程序富文本解析解决方案，能在应用中解析html，markdown代码。使用方式如下，基本使用样例见aParse/index。
 
 #### 基本使用方法
 （1）复制文件夹：
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/134524_95e82fc2_1670794.png "屏幕截图.png")
+> 复制文件夹aParse至项目中
 
 (2)引入必要文件:
 
-//在使用的View中引入AParse模块：
+> 在需要使用的页面中引入aParse组件
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/135353_1fbc8dcf_1670794.png "屏幕截图.png")
+    <import src="../../component/aParse/aParse.axml"/>
 
-//在使用的acss中引入aParse.acss,也可以在app.acss中引入：
+> 在使用的acss中引入aParse.acss,也可以在app.acss中全局引入
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/134904_8043c7d5_1670794.png "屏幕截图.png")
+    @import "../../component/aParse/aParse.acss";
 
 (3)数据绑定
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/135039_bcdb6cab_1670794.png "屏幕截图.png")
+> index.js
+
+    var AParse = require('../../component/aParse/aParse.js');
+    
+    Page({
+      onLoad(query) {
+    
+      let article = `
+          <h3>
+          <span style="color:red">钉钉小程序</span>
+          <span style="color:green">富文本解析</span>
+          <span style="color:blue">解决方案</span>
+          </h3>
+      `
+        /**
+         * 使用说明：
+        * AParse.AParse(bindName , type, data, target,imagePadding)
+        * 1.bindName绑定的数据名(必填)
+        * 2.type可以为html或者md(必填)
+        * 3.data为传入的具体数据(必填)
+        * 4.target为Page对象,一般为this(必填)
+        * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
+        */
+    
+        let that = this;
+        AParse.aParse('article', 'html', article, that, 5);
+      }
+    });
+
 
 
 （4）模板引用：
 
-//引入模板，这里的article为bindName
+> 在相应的axml中引入模板，这里的article为bindName
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1117/135204_2858b33f_1670794.png "屏幕截图.png")
+    <import src="../../component/aParse/aParse.axml"/>
+    
+    <template is="aParse" data="{{aParseData:article.nodes}}"/>
+
